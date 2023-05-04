@@ -1,5 +1,5 @@
 
- @tag4
+ @3
 Feature: feature to test new user registration
   I want to use this template for my feature file
 

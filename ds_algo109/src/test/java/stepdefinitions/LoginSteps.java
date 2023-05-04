@@ -1,6 +1,5 @@
 package stepdefinitions;
 
-import static org.junit.Assert.assertThat;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -26,7 +25,7 @@ import utilities.ExcelReader;
 import utilities.LoggerLoad;
 
 public class LoginSteps extends BasePage {
-	String excelpath = ".\\ExcelData/ds-algologin.xlsx";
+	String excelpath = ".//ExcelData/dsalgo-login .xlsx";
 	String message="";
 	WebDriver driver;
 	int rowval=0;

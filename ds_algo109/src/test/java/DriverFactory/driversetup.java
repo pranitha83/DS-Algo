@@ -2,6 +2,7 @@ package DriverFactory;
 
 import java.time.Duration;
 import java.util.ResourceBundle;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -44,7 +45,7 @@ public class driversetup {
 		}*/
 		getDriver().manage().deleteAllCookies();
 		getDriver().manage().window().maximize();
-		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		getDriver().manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 		return getDriver();
 	}
 

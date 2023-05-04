@@ -1,3 +1,4 @@
+@2
 Feature: evaluate home page
   @tag2
   Scenario: User navigate to home page

@@ -11,10 +11,11 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 		plugin = {"pretty", "html:target/Ds-algo.html",  //cucumber reports
 				"json:target/ExtentReports/Ds-algo.json",
 				"rerun:target/rerun.txt",  //mandatory for capture failures 
-				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}, //reporting purpose-- html reports are created
+				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",  //reporting purpose-- html reports are created
+			"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"}, //Allure reports
 		monochrome=true,  //console output color and eliminate junk characters
 		//dryRun=false, // (=true)->compilation purpose mostly to chk stepdefinitions are implemented or not
-		tags = "@Arrays", //tags from feature file
+		tags = "", //tags from feature file
 		features = {"src/test/resources/Features"}, //location of feature files, we can give this way-->".//features//"
 		glue= {"stepdefinitions","AllHooks"}) //location of step definition files, gives granural level of info in test result
 

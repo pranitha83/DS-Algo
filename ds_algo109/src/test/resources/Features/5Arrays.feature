@@ -1,4 +1,4 @@
-@Arrays
+@5
 Feature: Evaluate arrays module
 
 

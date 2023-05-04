@@ -55,4 +55,10 @@ public class HomePage extends BasePage {
 	public void modulegtstarted() {
 		moduleele.click();
 	}
+	public void Linkedlstclk() {
+		linkedlistele.click();
+	}
+	public void treemod() {
+		treeele.click();
+	}
 }
