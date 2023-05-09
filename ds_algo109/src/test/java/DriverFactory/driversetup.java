@@ -15,8 +15,8 @@ public class driversetup {
 	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<WebDriver>();
 	static ResourceBundle rb; // for reading properties file
 	static String br; //to store browser name
-
-	private static WebDriver getchromeDriver() {
+public static driversetup driversetup;
+	private driversetup() {
 
 		rb=ResourceBundle.getBundle("Config");
 		br=rb.getString("browser");
@@ -30,8 +30,8 @@ public class driversetup {
 			options.addArguments("--incognito");
 			driver=new ChromeDriver(options);*/
 			WebDriverManager.chromedriver().setup();
-			
-			tlDriver.set(new ChromeDriver());
+			driver = new ChromeDriver();
+			//tlDriver.set(new ChromeDriver());
 		}
 		/*else if br.equals("FIREFOX"){
 		//Firefox
@@ -43,30 +43,30 @@ public class driversetup {
 		System.setProperty("webdriver.msedge.driver", "C:/Users/sange/OneDrive/Desktop/Drivers/msedgedriver.exe");
 		WebDriver driver=new EdgeDriver();
 		}*/
-		getDriver().manage().deleteAllCookies();
-		getDriver().manage().window().maximize();
-		getDriver().manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-		return getDriver();
+		driver.manage().deleteAllCookies();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		
 	}
 
 	public static void openPage(String url) {
-		getDriver().get(url);
+		driver.get(url);
 	}
 	public static String getTitle() {
-		return getDriver().getTitle();
+		return driver.getTitle();
 	}
 	public static void NavBack() {
-		getDriver().navigate().back();
+		driver.navigate().back();
 	}
 	public static WebDriver getDriver() {
-		LoggerLoad.info("enter getdriver");
+		//LoggerLoad.info("enter getdriver");
 		//return driver;
-		return tlDriver.get();
+		return driver;
 	}
 	
 	public static void setUpDriver() {
-		if (getDriver()==null) {
-			getchromeDriver();
+		if (driversetup==null) {
+			driversetup= new driversetup();
 		}
 	}
 	
@@ -76,6 +76,6 @@ public class driversetup {
 			getDriver().close();
 			getDriver().quit();
 		}
-		driver = null;
+		driversetup = null;
 	}
 }

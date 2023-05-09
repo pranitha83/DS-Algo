@@ -39,7 +39,7 @@ int rowval =0;
 		registerPage = new registrationpage(driver);
 		login = new LoginPage(driver);
 		registerPage.registrationlink();
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 	}
 
 	@When("user enter username,password,confirm password from given {string} and {int}")
@@ -55,7 +55,7 @@ int rowval =0;
 		expmsg=testData.get(int1).get("expectedmsg");
 		registerPage.readusernameandpassword(User_name, Pass_word,Pass_wordcnf);
 		LoggerLoad.info("Registration credentials entered");
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		rowval=int1;
 	}
 
@@ -87,34 +87,18 @@ int rowval =0;
 			
 			actmsg=login.alertdismsg();
 			
-			//Assert.assertEquals(actmsg, expmsg);
+			Assert.assertEquals(actmsg, expmsg);
 			login.signout();
 			Thread.sleep(1000);
 			login.alertdismsg();
 			System.out.print(login.alertdismsg());
-			Thread.sleep(1000);
+			//Thread.sleep(1000);
 			login.signin();
 			
 			
 		}
 		
-			/*if (rowval<=2) {
-				WebElement hidtext=new WebDriverWait(driver,Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//input[@name='username']"))));
-				System.out.println(hidtext.getAttribute("validationMessage"));
-				LoggerLoad.info(hidtext.getAttribute("validationMessage"));
-
-			actmsg=hidtext.getAttribute("validationMessage");
-		}
-		else if(rowval==10){
-			actmsg=registerPage.alert();
-		}
-		else
-		{
-			actmsg=login.alertdismsg();
-		}
-			Assert.assertEquals(actmsg, expmsg);*/
-		
-	}
+	}		
 	
 }
 		

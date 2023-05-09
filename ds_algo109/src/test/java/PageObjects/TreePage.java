@@ -33,7 +33,7 @@ public class TreePage extends BasePage{
 	@FindBy(linkText = "Implementation Of BST") WebElement implementationOfBSTLink; //13
 	@FindBy(linkText = "Practice Questions") WebElement practiceQuestionLink; //14
 
-	@FindBy(xpath = "//a[@href='/tryEditor']") WebElement TryHereLink;
+	@FindBy(linkText = "Try here>>>") WebElement TryHereLink;
 	@FindBy(xpath="//form[@id='answer_form']/div/div/div/textarea") WebElement editorInput;
 	@FindBy(xpath = "//*[@id='answer_form']/button") WebElement runButton;
 	@FindBy(id = "output") static WebElement output;

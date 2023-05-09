@@ -10,27 +10,31 @@ import io.cucumber.java.Scenario;
 import utilities.LoggerLoad;
 
 public class Hooks {
-	@Before(order=1)
+	@Before(order=0)
     public static void setUp() {
-	 //Driverset=new driversetup();
+		LoggerLoad.info("before order 1");//Driverset=new driversetup();
 	driversetup.setUpDriver();
-	 LoggerLoad.info("driver setup");
+	 
     }
-@Before(order=0)
+/*@Before(order=1)
 public static void setup2() {
 	driversetup.getDriver();
-	LoggerLoad.info("getdriver");
-}
+	LoggerLoad.info("order 0");
+}*/
 
  
- @After
+ @After(order=1)
     public static void tearDown(Scenario scenario) {
  
         if(scenario.isFailed()) {
             final byte[] screenshot = ((TakesScreenshot)driversetup.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png", scenario.getName()); 
+            
+            
         }   
-         
-        //driversetup.tearDown();
-    }
+       // driversetup.tearDown();
+       }
+ 
+	
+
 }

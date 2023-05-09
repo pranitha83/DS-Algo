@@ -12,4 +12,5 @@ public class BasePage {
 	 public StackPage stackpage;
 	 public Lnklist linkedlst;
 	 public TreePage treepage;
+	 public DataStucturesIntr datastrpage;
 }

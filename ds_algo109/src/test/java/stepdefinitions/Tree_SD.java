@@ -39,7 +39,7 @@ public class Tree_SD extends BasePage{
 	
 	@Given("user is able to click on dropdown")
 	public void user_is_able_to_click_on_dropdown() throws InterruptedException {
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
 	   treepage.dropdown();
 	}
 

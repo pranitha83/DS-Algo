@@ -16,7 +16,7 @@ public class portalopen extends BasePage {
 		portalPage = new portalopenpage(driversetup.getDriver());
 		 LoggerLoad.info("launch browser");
 		//driver.switchTo().window(driver.getWindowHandle());
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 	}
 
 	@Given("User opens dsalgo portal app url")
@@ -30,7 +30,7 @@ public class portalopen extends BasePage {
 	public void user_click_on_get_started_button() throws InterruptedException {
 		portalPage.clickgetstartedbtn();
 		LoggerLoad.info("Getstarted btn click");
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 	}
 
 	@Then("User is navigated to Home page")

@@ -18,14 +18,14 @@ public class HomePageSteps extends BasePage {
 		
 		homepage.dropDownclk();
 		
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 	   
 	}
 
 	@When("User click on arrays from the dropdown")
 	public void user_click_on_arrays_from_the_dropdown() throws InterruptedException {
 		homepage.arrays();
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 	}
 
 	@Then("It  shows error message {string}")
@@ -39,7 +39,7 @@ public class HomePageSteps extends BasePage {
 	   driversetup.NavBack();
 		homepage = new HomePage(driversetup.getDriver());
 	   homepage.modulegtstarted();
-	   Thread.sleep(2000);
+	  // Thread.sleep(2000);
 	}
 	@Then("It is showing error message You are not logged in")
 	public void it_is_showing_error_message_you_are_not_logged_in() {

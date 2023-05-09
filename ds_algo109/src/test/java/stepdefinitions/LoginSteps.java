@@ -32,6 +32,7 @@ public class LoginSteps extends BasePage {
 	String actmsg;
 	@Given("The user is on login page")
 	public void the_user_is_on_signin_page() {
+		
 	  driver = driversetup.getDriver();
 	  driversetup.openPage("https://dsportalapp.herokuapp.com/login");
 	  
@@ -64,13 +65,13 @@ public class LoginSteps extends BasePage {
 		login.loginbtnclk();
 		Thread.sleep(2000);
 		if (rowval==0) {
-			   WebElement hidtext=new WebDriverWait(driver,Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//input[@name='username']"))));
+			   WebElement hidtext=new WebDriverWait(driver,Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//input[@name='password']"))));
 				System.out.println(hidtext.getAttribute("validationMessage"));
 				LoggerLoad.info(hidtext.getAttribute("validationMessage"));
 				actmsg=hidtext.getAttribute("validationMessage");
 				//Thread.sleep(2000);
 				
-				//Assert.assertEquals(actmsg, message);
+				Assert.assertEquals(actmsg, message);
 				
 			}
 			else if(rowval==1)  {

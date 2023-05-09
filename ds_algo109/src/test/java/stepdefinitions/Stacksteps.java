@@ -37,13 +37,13 @@ public class Stacksteps extends BasePage {
 		homepage = new HomePage(driver);
 		
 		homepage.dropDownclk();
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
 	}
 
 	@When("user select stack option")
 	public void user_select_stack_option() throws InterruptedException {
 		stackpage.selectstack();
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
 		LoggerLoad.info("select stack menu from dropdown");
 	}
 
@@ -51,14 +51,14 @@ public class Stacksteps extends BasePage {
 	public void user_selct_operations_in_stack() throws InterruptedException {
 		LoggerLoad.info("select operations in stack");
 		stackpage.menuselection(1);		
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
 		
 	}
 //	operations in stack page
 	@Given("user click on Try Here button")
 	public void user_click_on_try_here_button() throws InterruptedException {
 		stackpage.trybtnclk();
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
 		LoggerLoad.info("try button click");
 	}
 
@@ -127,7 +127,7 @@ public class Stacksteps extends BasePage {
 	public void user_select_implementation() throws InterruptedException {
 		LoggerLoad.info("select implementation in stack");
 		stackpage.menuselection(2);		
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
 	}
 	
 
@@ -144,7 +144,7 @@ public class Stacksteps extends BasePage {
 	public void user_select_practice_questions() throws InterruptedException {
 		LoggerLoad.info("select practice questions in stack");
 		stackpage.menuselection(4);		
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
 	}
 
 	@Given("navigate back to login page")

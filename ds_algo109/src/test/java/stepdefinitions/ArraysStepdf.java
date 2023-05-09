@@ -157,7 +157,7 @@ ExcelReader reader = new ExcelReader();
 	@When("User clear the tryeditor textbox")
 	public void user_clear_the_tryeditor_textbox() throws InterruptedException {
 	   arrays.txteditorclr();
-	   Thread.sleep(1000);
+	   //Thread.sleep(1000);
 	}
 	@When("User click on Question2 its navigate to tryeditor page")
 	public void user_click_on_question2_its_navigate_to_tryeditor_page() {

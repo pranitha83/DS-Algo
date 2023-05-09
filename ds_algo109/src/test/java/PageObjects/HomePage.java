@@ -61,4 +61,11 @@ public class HomePage extends BasePage {
 	public void treemod() {
 		treeele.click();
 	}
+	public void selectqueue() {
+		queueele.click();
+		
+	}
+	public void Graphclick() {
+		graphele.click();
+	}
 }
